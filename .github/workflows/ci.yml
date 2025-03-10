@@ -1,0 +1,57 @@
+name: CI - Unit Tests & Coverage
+
+on:
+  pull_request:
+    branches:
+      - main # 或者你用于主开发分支的其他名称
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run unit tests and collect coverage
+        run: |
+          npm run test -- --coverage
+        env:
+          CI: true
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./coverage/lcov-report/index.html # 修改为你实际的覆盖率报告路径
+          flags: unittests
+          name: codecov-umbrella
+
+  check-coverage:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Check coverage status from Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          flags: unittests
+
+      - name: Fail the PR if coverage drops in the new commit
+        run: |
+          coverage=$(curl -s https://codecov.io/api/gh/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/comments | jq '.[] | select(.body | contains("coverage:")) | .body' | grep -oP '(?<=coverage: )\d+\.\d+' )
+          if [[ $(echo "$coverage < 80" | bc) -eq 1 ]]; then
+            echo "Coverage is below 80%, failing PR"
+            exit 1
+          fi

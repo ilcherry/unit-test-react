@@ -16,6 +16,7 @@ export default defineConfig({
         "vitest.config.js",
         "vite.config.js",
         "src/setupTests.js",
+        "docs",
       ],
     },
   },
