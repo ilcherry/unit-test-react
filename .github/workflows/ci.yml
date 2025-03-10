@@ -46,8 +46,13 @@ jobs:
 
       - name: Fail the PR if coverage drops in the new commit
         run: |
-          coverage=$(curl -s https://codecov.io/api/gh/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/comments | jq '.[] | select(.body | contains("coverage:")) | .body' | grep -oP '(?<=coverage: )\d+\.\d+' )
-          if [[ $(echo "$coverage < 80" | bc) -eq 1 ]]; then
-            echo "Coverage is below 80%, failing PR"
+          COMMIT_SHA=${{ github.event.pull_request.head.sha }}
+          coverage=$(curl -s https://codecov.io/api/gh/${{ github.repository }}/commit/$COMMIT_SHA \
+            | jq -r '.commit.totals.coverage')
+
+          echo "Current coverage: $coverage"
+
+          if [[ -z "$coverage" || $(echo "$coverage < 80" | bc) -eq 1 ]]; then
+            echo "Coverage is below 80% or not found, failing PR"
             exit 1
           fi
