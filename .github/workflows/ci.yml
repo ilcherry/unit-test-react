@@ -22,11 +22,11 @@ jobs:
           node-version: "16"
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       - name: Run unit tests and collect coverage
         run: |
-          npm run test -- --coverage
+          npm run test:coverage
         env:
           CI: true
 
