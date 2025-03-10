@@ -1,4 +1,4 @@
-name: CI - Unit Tests & Coverage
+name: ci-test
 
 on:
   pull_request:
