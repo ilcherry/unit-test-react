@@ -25,16 +25,15 @@ jobs:
         run: npm install --legacy-peer-deps
 
       - name: Run unit tests and collect coverage
-        run: |
-          npm run test:ci
+        run: npx vitest run --coverage
         env:
           CI: true
 
       - name: Upload coverage to Codecov
-        if: ${{!cancelled()}}
-        uses: codecov/test-results-action@v1
+        uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
+          slug: TD-gaowei/unit-test-react
           # files: ./coverage/lcov-report/index.html # 修改为你实际的覆盖率报告路径
           # flags: unittests
           # name: codecov-umbrella
