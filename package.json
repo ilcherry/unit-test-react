@@ -8,7 +8,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest",
-    "test:coverage": "vitest --coverage",
+    "test:coverage": "vitest --coverage --coverage.reporter=lcov",
     "test:ci": "vitest --reporter=junit --outputFile=test-report.junit.xml"
   },
   "dependencies": {
