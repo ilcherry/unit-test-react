@@ -10,7 +10,12 @@ export default defineConfig({
     environment: "happy-dom",
     setupFiles: path.join(dirname, "src/setupTests.js"),
     coverage: {
+      provider: "c8",
+      reporter: ["lcov", "text"],
+      reportsDirectory: "coverage",
       exclude: [
+        "node_modules",
+        "dist/",
         "src/main.jsx",
         "eslint.config.js",
         "vitest.config.js",
