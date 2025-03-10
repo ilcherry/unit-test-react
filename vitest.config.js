@@ -11,7 +11,7 @@ export default defineConfig({
     setupFiles: path.join(dirname, "src/setupTests.js"),
     coverage: {
       provider: "c8",
-      reporter: ["lcov", "text"],
+      reporter: ["text", "lcov"],
       reportsDirectory: "coverage",
       exclude: [
         "node_modules",
