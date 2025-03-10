@@ -49,9 +49,9 @@ jobs:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         run: |
           COMMIT_SHA=${{ github.event.pull_request.head.sha }}
-          curl -v https://codecov.io/api/gh/${{ github.repository }}/commit/$COMMIT_SHA
+          curl -v -L https://codecov.io/api/gh/${{ github.repository }}/commit/$COMMIT_SHA
 
-          response=$(curl -s https://codecov.io/api/gh/${{ github.repository }}/commit/$COMMIT_SHA)
+          response=$(curl -s -L https://codecov.io/api/gh/${{ github.repository }}/commit/$COMMIT_SHA)
 
           echo "Codecov API Response: $response"
 
