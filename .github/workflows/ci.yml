@@ -41,20 +41,8 @@ jobs:
           fail_ci_if_error: true
           root_dir: /home/runner/work/unit-test-react/unit-test-react
           verbose: true
-          # flags: unittests
-          # name: codecov-umbrella
-
-  check-coverage:
-    runs-on: ubuntu-latest
-    needs: test
-    steps:
-      - name: Check coverage status from Codecov
-        uses: codecov/codecov-action@v5
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
           flags: unittests
-          fail_ci_if_error: true
-          verbose: true
+          # name: codecov-umbrella
 
       - name: Fail the PR if coverage drops in the new commit
         run: |
