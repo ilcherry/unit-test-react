@@ -29,6 +29,9 @@ jobs:
         env:
           CI: true
 
+      - name: Debug coverage files
+        run: ls -R coverage
+
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v5
         with:
@@ -36,6 +39,7 @@ jobs:
           slug: TD-gaowei/unit-test-react
           files: ./coverage/lcov.info # 修改为你实际的覆盖率报告路径
           fail_ci_if_error: true
+          root_dir: /home/runner/work/unit-test-react/unit-test-react
           verbose: true
           # flags: unittests
           # name: codecov-umbrella
@@ -45,10 +49,12 @@ jobs:
     needs: test
     steps:
       - name: Check coverage status from Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           flags: unittests
+          fail_ci_if_error: true
+          verbose: true
 
       - name: Fail the PR if coverage drops in the new commit
         run: |
