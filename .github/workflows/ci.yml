@@ -26,17 +26,18 @@ jobs:
 
       - name: Run unit tests and collect coverage
         run: |
-          npm run test:coverage
+          npm run test:ci
         env:
           CI: true
 
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
+        if: ${{!cancelled()}}
+        uses: codecov/test-results-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          files: ./coverage/lcov-report/index.html # 修改为你实际的覆盖率报告路径
-          flags: unittests
-          name: codecov-umbrella
+          # files: ./coverage/lcov-report/index.html # 修改为你实际的覆盖率报告路径
+          # flags: unittests
+          # name: codecov-umbrella
 
   check-coverage:
     runs-on: ubuntu-latest

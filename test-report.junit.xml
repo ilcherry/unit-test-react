@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="27" failures="0" errors="0" time="2.15314175">
+    <testsuite name="src/__tests__/App.test.jsx" timestamp="2025-03-10T06:46:15.200Z" hostname="CN-200509-MBP18M3P" tests="5" failures="0" errors="0" skipped="0" time="0.036485916">
+        <testcase classname="src/__tests__/App.test.jsx" name="App component &gt; renders Vite and React logos" time="0.012485083">
+        </testcase>
+        <testcase classname="src/__tests__/App.test.jsx" name="App component &gt; renders the heading" time="0.004185542">
+        </testcase>
+        <testcase classname="src/__tests__/App.test.jsx" name="App component &gt; increments count on button click" time="0.012327625">
+        </testcase>
+        <testcase classname="src/__tests__/App.test.jsx" name="App component &gt; renders the edit message" time="0.004989042">
+        </testcase>
+        <testcase classname="src/__tests__/App.test.jsx" name="App component &gt; renders the documentation message" time="0.001873542">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/components/__tests__/AccountList.test.jsx" timestamp="2025-03-10T06:46:15.201Z" hostname="CN-200509-MBP18M3P" tests="3" failures="0" errors="0" skipped="0" time="0.025209292">
+        <testcase classname="src/components/__tests__/AccountList.test.jsx" name="AccountList &gt; should display users after successful fetch" time="0.015761042">
+        </testcase>
+        <testcase classname="src/components/__tests__/AccountList.test.jsx" name="AccountList &gt; should display an error message when fetch fails" time="0.004568375">
+        </testcase>
+        <testcase classname="src/components/__tests__/AccountList.test.jsx" name="AccountList &gt; should display an error message when API response is not ok" time="0.0042925">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/components/__tests__/Button.test.jsx" timestamp="2025-03-10T06:46:15.202Z" hostname="CN-200509-MBP18M3P" tests="1" failures="0" errors="0" skipped="0" time="0.0074175">
+        <testcase classname="src/components/__tests__/Button.test.jsx" name="Button Component Snapshot &gt; should match the snapshot" time="0.006829333">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/components/__tests__/UserList.test.jsx" timestamp="2025-03-10T06:46:15.202Z" hostname="CN-200509-MBP18M3P" tests="2" failures="0" errors="0" skipped="0" time="2.024912625">
+        <testcase classname="src/components/__tests__/UserList.test.jsx" name="UserList component &gt; renders User List heading" time="0.007728334">
+        </testcase>
+        <testcase classname="src/components/__tests__/UserList.test.jsx" name="UserList component &gt; renders users after timeout" time="2.01633925">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/hooks/__tests__/useDebounce.test.js" timestamp="2025-03-10T06:46:15.202Z" hostname="CN-200509-MBP18M3P" tests="3" failures="0" errors="0" skipped="0" time="0.010717208">
+        <testcase classname="src/hooks/__tests__/useDebounce.test.js" name="useDebounce &gt; should return the initial value immediately" time="0.006786833">
+            <system-err>
+Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it&apos;s running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
+
+Warning: unmountComponentAtNode is deprecated and will be removed in the next major release. Switch to the createRoot API. Learn more: https://reactjs.org/link/switch-to-createroot
+
+            </system-err>
+        </testcase>
+        <testcase classname="src/hooks/__tests__/useDebounce.test.js" name="useDebounce &gt; should debounce the value" time="0.001899291">
+            <system-err>
+Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it&apos;s running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
+Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it&apos;s running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
+
+            </system-err>
+        </testcase>
+        <testcase classname="src/hooks/__tests__/useDebounce.test.js" name="useDebounce &gt; should reset the debounce timer if value changes within the delay period" time="0.001629416">
+            <system-err>
+Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it&apos;s running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
+Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it&apos;s running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
+Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it&apos;s running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
+
+            </system-err>
+        </testcase>
+    </testsuite>
+    <testsuite name="src/hooks/__tests__/useMount.test.jsx" timestamp="2025-03-10T06:46:15.203Z" hostname="CN-200509-MBP18M3P" tests="1" failures="0" errors="0" skipped="0" time="0.005829083">
+        <testcase classname="src/hooks/__tests__/useMount.test.jsx" name="useMount &gt; should call the callback on mount" time="0.005348375">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/store/__tests__/useCounter.test.js" timestamp="2025-03-10T06:46:15.203Z" hostname="CN-200509-MBP18M3P" tests="4" failures="0" errors="0" skipped="0" time="0.010084125">
+        <testcase classname="src/store/__tests__/useCounter.test.js" name="useCounter &gt; should initialize with count 0" time="0.006570792">
+            <system-err>
+Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it&apos;s running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
+
+Warning: unmountComponentAtNode is deprecated and will be removed in the next major release. Switch to the createRoot API. Learn more: https://reactjs.org/link/switch-to-createroot
+
+            </system-err>
+        </testcase>
+        <testcase classname="src/store/__tests__/useCounter.test.js" name="useCounter &gt; should increment count" time="0.00107225">
+            <system-err>
+Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it&apos;s running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
+
+            </system-err>
+        </testcase>
+        <testcase classname="src/store/__tests__/useCounter.test.js" name="useCounter &gt; should decrement count" time="0.000894542">
+            <system-err>
+Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it&apos;s running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
+
+            </system-err>
+        </testcase>
+        <testcase classname="src/store/__tests__/useCounter.test.js" name="useCounter &gt; should reset count" time="0.001029625">
+            <system-err>
+Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it&apos;s running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
+
+            </system-err>
+        </testcase>
+    </testsuite>
+    <testsuite name="src/utils/__tests__/toLowercase.test.js" timestamp="2025-03-10T06:46:15.204Z" hostname="CN-200509-MBP18M3P" tests="5" failures="0" errors="0" skipped="0" time="0.002686334">
+        <testcase classname="src/utils/__tests__/toLowercase.test.js" name="toLowercase &gt; should convert a string to lowercase" time="0.000967125">
+        </testcase>
+        <testcase classname="src/utils/__tests__/toLowercase.test.js" name="toLowercase &gt; should return an empty string if input is an empty string" time="0.000092291">
+        </testcase>
+        <testcase classname="src/utils/__tests__/toLowercase.test.js" name="toLowercase &gt; should handle mixed case strings" time="0.000062416">
+        </testcase>
+        <testcase classname="src/utils/__tests__/toLowercase.test.js" name="toLowercase &gt; should handle strings with numbers and special characters" time="0.0001895">
+        </testcase>
+        <testcase classname="src/utils/__tests__/toLowercase.test.js" name="toLowercase &gt; should throw an error if input is not a string" time="0.000519833">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/components/Login/__tests__/Login.test.jsx" timestamp="2025-03-10T06:46:15.205Z" hostname="CN-200509-MBP18M3P" tests="3" failures="0" errors="0" skipped="0" time="0.029799667">
+        <testcase classname="src/components/Login/__tests__/Login.test.jsx" name="Login Component &gt; renders the login form" time="0.015544375">
+        </testcase>
+        <testcase classname="src/components/Login/__tests__/Login.test.jsx" name="Login Component &gt; updates the username and password fields" time="0.005694833">
+        </testcase>
+        <testcase classname="src/components/Login/__tests__/Login.test.jsx" name="Login Component &gt; handles form submission" time="0.0079815">
+        </testcase>
+    </testsuite>
+</testsuites>
